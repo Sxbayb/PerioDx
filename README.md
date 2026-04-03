@@ -27,7 +27,4 @@ PerioDx busca resolver la brecha diagnóstica en la odontología moderna, permit
 
 ---
 
-## 👥 Contribuciones
-Este repositorio es un esfuerzo por integrar la **IA en la Periodoncia**. Si deseas colaborar, siéntete libre de abrir un *Issue* o enviar un *Pull Request*.
-
 **Desarrollado por:** [Sxbayb](https://github.com/Sxbayb)
