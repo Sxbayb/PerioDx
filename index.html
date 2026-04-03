@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico Periodontal · Clasificación 2017</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background decorative elements -->
+  <div class="bg-decoration">
+    <div class="bg-circle bg-circle--1"></div>
+    <div class="bg-circle bg-circle--2"></div>
+    <div class="bg-circle bg-circle--3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="brand-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="14" cy="17" r="2.5" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Perio<em>Dx</em></span>
+          <span class="brand-sub">Clasificación 2017</span>
+        </div>
+      </div>
+
+      <nav class="sidebar__steps" id="sidebar-steps">
+        <!-- Populated by JS -->
+      </nav>
+
+      <div class="sidebar__info">
+        <div class="info-block">
+          <div class="info-label">Progreso</div>
+          <div class="info-progress">
+            <div class="info-progress__bar">
+              <div class="info-progress__fill" id="sidebar-prog"></div>
+            </div>
+            <span class="info-progress__pct" id="sidebar-pct">0%</span>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Pasos completados</div>
+          <div class="info-value" id="sidebar-count">0 / 4</div>
+        </div>
+        <button class="btn-restart" id="restart-btn" onclick="restartDiagnosis()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7a5 5 0 1 0 1.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M2 3.5V7h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Nuevo diagnóstico
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Mobile header -->
+      <header class="mobile-header">
+        <div class="mobile-brand">
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="var(--accent)" stroke-width="1.5"/><path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="17" r="2.5" fill="var(--accent)"/></svg>
+          <span>PerioDx</span>
+        </div>
+        <div class="mobile-prog">
+          <div class="mobile-prog__bar">
+            <div class="mobile-prog__fill" id="mobile-prog"></div>
+          </div>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" id="menu-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <!-- Mobile menu drawer -->
+      <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="mobile-nav" id="mobile-nav"></nav>
+        <button class="btn-restart btn-restart--mobile" onclick="restartDiagnosis()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7a5 5 0 1 0 1.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M2 3.5V7h3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Nuevo diagnóstico
+        </button>
+      </div>
+
+      <!-- Card area -->
+      <div class="card-area" id="card-area">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Back button -->
+      <div class="back-area" id="back-area" style="display:none">
+        <button class="btn-back" onclick="goBack()">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Volver
+        </button>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
